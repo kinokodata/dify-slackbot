@@ -1,0 +1,10 @@
+services:
+  slackbot:
+    build: .
+    environment:
+      - SLACK_BOT_TOKEN=${SLACK_BOT_TOKEN}
+      - SLACK_APP_TOKEN=${SLACK_APP_TOKEN}
+      - DIFY_API_KEY=${DIFY_API_KEY}
+    volumes:
+      - ./:/app
+    restart: unless-stopped
